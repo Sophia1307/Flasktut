@@ -1,0 +1,17 @@
+<html>
+
+<head>
+	{% if title %}
+	<title>{{ title }} - Flasktut</title>
+	{% else %}
+	<title>Sophia's blog</title>
+		{% endif %}
+	</head>
+
+	<body>
+		<div>Flasktut: <a href="/index" style="text-decoration: none;"> Pocetna 
+		<hr>
+		</a></div>
+		{% block content %}{% endblock %}
+	</body>
+</html>
