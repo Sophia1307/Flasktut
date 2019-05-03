@@ -9,11 +9,21 @@
 	</head>
 
 	<body>
-		<div>Sophia's blog: 
-			<a href="/index">Home</a>
-			<a href="/login">Login</a>
+		<div>
+			Sophia's blog: 
+			<a href="{{ url_for ('index') }}">Home</a>
+			<a href="{{ url_for ('login') }}">Login</a>
 		</div>
 		<hr>
+		{% with message = get_flashed_messages() %}
+		{% if messages %}
+		<ul>
+			{% for message in messages %}
+			<li> {{ message }}</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+		{% endwith %}
 		{% block content %}{% endblock %}
 	</body>
 </html>
